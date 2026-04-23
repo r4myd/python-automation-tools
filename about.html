@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Dr. Sharvan Kumar Yadav — PhD Organic Farming, ICAR Researcher, 10 National Awards, Founder of Dr. Organic Vermicompost Farm, Jaipur.">
+  <title>About | Dr. Organic Vermicompost Farm</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+  <style>
+    .page-hero { background: var(--soil); padding: 120px 5% 4rem; position: relative; overflow: hidden; }
+    .page-hero::before { content:''; position:absolute; top:-80px; right:-80px; width:400px; height:400px; background:rgba(61,92,42,0.3); border-radius:50%; filter:blur(60px); }
+    .page-hero::after { content:''; position:absolute; bottom:-60px; left:20%; width:300px; height:300px; background:rgba(126,184,58,0.1); border-radius:50%; filter:blur(50px); }
+    .page-hero-content { position:relative; z-index:1; display:grid; grid-template-columns:1fr auto; gap:3rem; align-items:center; max-width:1200px; margin:0 auto; }
+
+    .founder-profile-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(126,184,58,0.25);
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+      width: 260px;
+      flex-shrink: 0;
+    }
+    .fp-photo { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid var(--sprout); box-shadow: 0 0 0 8px rgba(126,184,58,0.15); margin: 0 auto 1rem; display: block; }
+    .fp-name { font-family: 'Playfair Display', serif; color: var(--cream); font-size: 1.2rem; margin-bottom: 4px; }
+    .fp-title { color: var(--sprout); font-size: 12px; letter-spacing: 0.5px; margin-bottom: 1rem; }
+    .fp-quals { display: flex; flex-direction: column; gap: 6px; }
+    .fp-qual { background: rgba(255,255,255,0.06); border-radius: 6px; padding: 6px 10px; font-size: 12px; color: var(--wheat); text-align: left; display: flex; gap: 6px; align-items: center; }
+
+    .about-full { background: var(--cream); padding: 4rem 0; }
+    .about-story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; margin-bottom: 4rem; }
+
+    .about-photo-stack { position: relative; height: 500px; }
+    .aps-main { position: absolute; top: 0; left: 0; width: 75%; height: 75%; border-radius: 12px; overflow: hidden; }
+    .aps-main img { width: 100%; height: 100%; object-fit: cover; }
+    .aps-side { position: absolute; bottom: 0; right: 0; width: 55%; height: 55%; border-radius: 12px; overflow: hidden; border: 4px solid var(--cream); }
+    .aps-side img { width: 100%; height: 100%; object-fit: cover; }
+    .aps-badge {
+      position: absolute; top: 60%; left: 55%;
+      background: var(--moss); color: white;
+      border-radius: 10px; padding: 10px 14px;
+      font-size: 12px; font-weight: 700; text-align: center;
+      border: 3px solid var(--cream);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      line-height: 1.4;
+    }
+    .aps-badge strong { display: block; font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--lime); }
+
+    .qualifications-section { background: #f0ebe0; padding: 4rem 0; }
+    .quals-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem; }
+    .qual-card {
+      background: white; border-radius: 12px; padding: 1.5rem;
+      border: 1px solid rgba(61,92,42,0.1); border-top: 4px solid var(--moss);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .qual-card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+    .qc-icon { font-size: 2rem; margin-bottom: 0.8rem; display: block; }
+    .qc-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--text-dark); margin-bottom: 4px; }
+    .qc-org { font-size: 12px; font-weight: 700; color: var(--moss); margin-bottom: 0.5rem; }
+    .qc-desc { font-size: 13px; color: var(--text-mid); line-height: 1.65; }
+
+    .awards-full-section { background: var(--soil); padding: 4rem 0; }
+    .awards-full-section .section-label { color: var(--gold); }
+    .awards-full-section .section-label::after { background: var(--gold); }
+    .awards-full-section .section-h { color: var(--cream); }
+    .awards-full-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
+    .award-cert-card { border-radius: 12px; overflow: hidden; position: relative; }
+    .award-cert-card img { width: 100%; display: block; border-radius: 12px; }
+    .award-cert-cap { margin-top: 10px; }
+    .award-cert-cap h4 { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 1rem; }
+    .award-cert-cap p { font-size: 12px; color: var(--wheat); margin-top: 2px; }
+
+    .awards-list-full { display: flex; flex-direction: column; gap: 10px; }
+    .alf-item {
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(201,160,48,0.2);
+      border-radius: 10px; padding: 12px 16px;
+      display: flex; align-items: center; gap: 14px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .alf-item:hover { border-color: rgba(201,160,48,0.5); transform: translateX(4px); }
+    .alf-icon { font-size: 1.8rem; flex-shrink: 0; }
+    .alf-name { font-size: 14px; font-weight: 700; color: var(--cream); }
+    .alf-org { font-size: 12px; color: var(--wheat); opacity: 0.7; margin-top: 2px; }
+    .alf-year { margin-left: auto; font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+
+    .icar-story-section { background: var(--cream); padding: 4rem 0; }
+    .icar-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    .icar-img { border-radius: 12px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
+    .icar-img img { width: 100%; display: block; }
+    .icar-text h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--text-dark); margin-bottom: 0.5rem; }
+    .icar-text p { font-size: 14px; color: var(--text-mid); line-height: 1.85; margin-bottom: 1rem; }
+    .icar-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1rem; }
+    .icar-tag { background: rgba(61,92,42,0.1); color: var(--moss); font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 20px; border: 1px solid rgba(61,92,42,0.2); }
+
+    @media(max-width:768px) {
+      .page-hero-content { grid-template-columns: 1fr; }
+      .founder-profile-card { width: 100%; }
+      .about-story-grid { grid-template-columns: 1fr; }
+      .about-photo-stack { height: 320px; }
+      .quals-grid { grid-template-columns: 1fr; }
+      .awards-full-grid { grid-template-columns: 1fr; }
+      .icar-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<a class="float-wa" href="https://wa.me/916377544290" target="_blank">
+  <span class="float-wa-tooltip">Chat on WhatsApp</span>
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<nav id="mainNav">
+  <a class="nav-logo" href="index.html">
+    <div class="logo-icon">🌿</div>
+    <div class="logo-text-wrap">
+      <div class="logo-main">Dr. Organic Vermicompost Farm</div>
+      <div class="logo-sub">Sundarpura, Jaipur · Est. 2020</div>
+    </div>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="training.html">Training</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:12px;">
+    <a class="nav-wa-btn" href="https://wa.me/916377544290" target="_blank">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <span>WhatsApp</span>
+    </a>
+    <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="page-hero-content">
+    <div>
+      <div class="hero-badge">👨‍🔬 About / परिचय</div>
+      <h1 class="serif" style="color:var(--cream);">Meet the Man Behind<br><em style="color:var(--sprout)">India's Organic Revolution</em></h1>
+      <p class="hindi" style="color:var(--wheat);margin:0.5rem 0 1rem;font-family:'Noto Sans Devanagari',sans-serif;font-size:1rem;">भारत के सबसे प्रसिद्ध जैविक कृषि वैज्ञानिक और उद्यमी</p>
+      <p style="color:rgba(248,243,232,0.7);font-size:15px;line-height:1.7;max-width:520px;">Dr. Sharvan Kumar Yadav — Ph.D. Organic Farming, ICAR Researcher, 10 National Award winner. A scientist who left the lab to heal India's soil, one earthworm at a time.</p>
+    </div>
+    <div class="founder-profile-card reveal">
+      <img class="fp-photo" id="heroFounderImg" src="" alt="Dr. Sharvan Kumar Yadav">
+      <div class="fp-name serif">Dr. Sharvan Kumar Yadav</div>
+      <div class="fp-title">Dr. Organic · Ph.D. Agronomy</div>
+      <div class="fp-quals">
+        <div class="fp-qual">🎓 Ph.D. Organic Farming — MPUAT</div>
+        <div class="fp-qual">🔬 MSc Organic Farming — JRF Scholar</div>
+        <div class="fp-qual">✅ ASRB NET Qualified</div>
+        <div class="fp-qual">🏅 ICAR JRF & SRF</div>
+        <div class="fp-qual">🏆 10+ National Awards</div>
+        <div class="fp-qual">📱 145K+ Instagram</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STORY -->
+<section class="about-full">
+  <div class="section-wrap">
+    <div class="about-story-grid">
+      <div class="about-photo-stack reveal">
+        <div class="aps-main">
+          <img id="aboutFounderMain" src="" alt="Dr. Sharvan Kumar Yadav — holding earthworms">
+        </div>
+        <div class="aps-side">
+          <img id="aboutTrainImg" src="" alt="Training session">
+        </div>
+        <div class="aps-badge">
+          <strong>2000</strong>
+          Earthworms/kg<br>
+          <span style="font-size:10px;color:rgba(255,255,255,0.8);">India's Highest</span>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="section-label">The Story / कहानी</div>
+        <h2 class="section-h serif">A Mission Born from Pain, Built on Science</h2>
+        <p class="section-hi hindi">पिता की बीमारी से मिली सीख — मिट्टी को बचाने की ठानी</p>
+
+        <p style="font-size:15px;color:var(--text-mid);line-height:1.85;margin-bottom:1rem;">
+          Dr. Sharvan Kumar Yadav was born into a farming family in Rajasthan. Always passionate about agriculture, he pursued higher education — earning his MSc in Organic Farming from Karnataka with an ICAR JRF scholarship in 2012, followed by his Ph.D. in Agronomy with specialisation in Organic Farming from Maharana Pratap University of Agriculture & Technology (MPUAT), Udaipur.
+        </p>
+        <p style="font-size:15px;color:var(--text-mid);line-height:1.85;margin-bottom:1rem;">
+          The turning point came when his father — a healthy farmer with no bad habits — was diagnosed with cancer. <em style="color:var(--bark);">"We realised chemical food was silently poisoning us,"</em> Dr. Sharvan recalls. This moment sparked a lifelong commitment to organic farming.
+        </p>
+        <p style="font-size:15px;color:var(--text-mid);line-height:1.85;margin-bottom:1.5rem;">
+          After completing his Ph.D., he worked as a Senior Research Fellow at ICAR for two years. During the 2020 lockdown, he came home and started with just <strong>17 vermicompost beds</strong>. Today, the farm at Sundarpura runs <strong>2500–2800 beds on 5 hectares</strong>, producing 1500 tonnes of vermicompost per year — one of the largest in India.
+        </p>
+
+        <div style="background:rgba(61,92,42,0.08);border-left:4px solid var(--moss);border-radius:0 8px 8px 0;padding:1rem 1.2rem;margin-bottom:1.5rem;">
+          <p style="font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--bark);font-style:italic;line-height:1.6;margin:0;">
+            "My goal was to give good organic manure to farmers across the country, so that more and more people join organic farming."
+          </p>
+          <p style="font-size:12px;color:var(--text-light);margin-top:6px;margin-bottom:0;">— Dr. Sharvan Kumar Yadav</p>
+        </div>
+
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot">🏡</div>
+            <div class="tl-content">
+              <div class="tl-year">Early Life</div>
+              <div class="tl-text">Born in a farming family in Rajasthan. Father Sita Ram Yadav — a devoted organic farmer, later awarded Best Organic Farmer by Rajasthan CM.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">🎓</div>
+            <div class="tl-content">
+              <div class="tl-year">2012</div>
+              <div class="tl-text">MSc Organic Farming from Karnataka on ICAR JRF scholarship. Briefly joined MNC to promote pesticides — quit in 6 months. Couldn't betray organic mission.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">🔬</div>
+            <div class="tl-content">
+              <div class="tl-year">2016</div>
+              <div class="tl-text">Father diagnosed with cancer. Family switched to full organic farming. This became the emotional fuel for Dr. Sharvan's life mission.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">🏅</div>
+            <div class="tl-content">
+              <div class="tl-year">2018</div>
+              <div class="tl-text">Ph.D. completed. Joined ICAR as Senior Research Fellow at MPUAT Udaipur. 15 years total research experience on organic farming.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">🌱</div>
+            <div class="tl-content">
+              <div class="tl-year">2020</div>
+              <div class="tl-text">Lockdown. Left ICAR job. Started Dr. Organic Vermicompost Farm with 17 beds at Sundarpura, Jaipur. Began YouTube channel & social media outreach.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">📈</div>
+            <div class="tl-content">
+              <div class="tl-year">2022–24</div>
+              <div class="tl-text">Scaled to 700+ beds. 20,000+ farmers trained. Media coverage in Krishi Jagran, Kisan of India, The Logically. Instagram crossed 145K followers.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">🏆</div>
+            <div class="tl-content">
+              <div class="tl-year">2026</div>
+              <div class="tl-text">Crop Icon Award 2026 — Organic Innovation & Technology (MIONP 2.0). Farm scaled to 2800 beds, 1500T/year. ICAR Startup Story published.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUALIFICATIONS -->
+<section class="qualifications-section">
+  <div class="section-wrap">
+    <div class="section-label">Qualifications / योग्यताएं</div>
+    <h2 class="section-h serif">Academic & Research Excellence</h2>
+    <p class="section-hi hindi">शैक्षणिक उत्कृष्टता और अनुसंधान अनुभव</p>
+    <div class="quals-grid">
+      <div class="qual-card reveal">
+        <span class="qc-icon">🎓</span>
+        <div class="qc-title serif">Ph.D. in Agronomy</div>
+        <div class="qc-org">MPUAT — Maharana Pratap University of Agriculture & Technology, Udaipur</div>
+        <div class="qc-desc">Specialisation in Organic Farming. Doctoral research under RCA College, Udaipur. Completed with Senior Research Fellowship from ICAR.</div>
+      </div>
+      <div class="qual-card reveal">
+        <span class="qc-icon">🔬</span>
+        <div class="qc-title serif">MSc Organic Farming</div>
+        <div class="qc-org">Karnataka · ICAR JRF Scholarship</div>
+        <div class="qc-desc">Completed with prestigious ICAR Junior Research Fellowship scholarship. Top performer in national-level ICAR JRF examination.</div>
+      </div>
+      <div class="qual-card reveal">
+        <span class="qc-icon">✅</span>
+        <div class="qc-title serif">ASRB NET Qualified</div>
+        <div class="qc-org">Agricultural Scientists Recruitment Board</div>
+        <div class="qc-desc">National Eligibility Test for agricultural scientists — one of India's most competitive exams in the agriculture domain.</div>
+      </div>
+      <div class="qual-card reveal">
+        <span class="qc-icon">🏅</span>
+        <div class="qc-title serif">ICAR JRF & SRF</div>
+        <div class="qc-org">Indian Council of Agricultural Research</div>
+        <div class="qc-desc">Both Junior and Senior Research Fellowships from ICAR — India's premier agricultural research body. 15 years of research experience.</div>
+      </div>
+      <div class="qual-card reveal">
+        <span class="qc-icon">🌾</span>
+        <div class="qc-title serif">ICAR Research Fellow</div>
+        <div class="qc-org">All India Network Project on Organic Farming</div>
+        <div class="qc-desc">Worked as Senior Research Fellow under ICAR's All India Network Project on Organic Farming from 2018–2020. Mentored by Dr. S.K. Sharma, ADG (HRM), ICAR.</div>
+      </div>
+      <div class="qual-card reveal">
+        <span class="qc-icon">📜</span>
+        <div class="qc-title serif">ATMA & Rajasthan Agri. Licensed</div>
+        <div class="qc-org">Govt. of Rajasthan / Shri Karan Narendra Agriculture University</div>
+        <div class="qc-desc">Official licenses from Rajasthan Agriculture Department. Recognised by ICAR, state universities, and ATMA officials through farm visits and technical interactions.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section class="awards-full-section">
+  <div class="section-wrap">
+    <div class="section-label">Awards / पुरस्कार</div>
+    <h2 class="section-h serif">10+ National Awards & Recognitions</h2>
+    <p style="color:var(--wheat);font-size:14px;margin-bottom:2rem;font-family:'Noto Sans Devanagari',sans-serif;" class="hindi">राष्ट्रीय स्तर पर सम्मानित — भारत के शीर्ष जैविक किसान</p>
+    <div class="awards-full-grid">
+      <div class="reveal">
+        <div class="award-cert-card">
+          <img id="awardCertImg" src="" alt="Crop Icon Award 2026 Certificate">
+        </div>
+        <div class="award-cert-cap">
+          <h4>Crop Icon Award 2026 — Organic Innovation & Technology</h4>
+          <p>Awarded by MIONP 2.0 (Make India Organic Natural & Profitable) — India's Premier Organic & Natural Farming Platform. Organised by Krishi Jagran & Agriculture World.</p>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="awards-list-full">
+          <div class="alf-item">
+            <div class="alf-icon">🏆</div>
+            <div>
+              <div class="alf-name">Crop Icon Award — Organic Farming Icon</div>
+              <div class="alf-org">MIONP 2.0 · Krishi Jagran · GNFSU</div>
+            </div>
+            <div class="alf-year">2026</div>
+          </div>
+          <div class="alf-item">
+            <div class="alf-icon">🌾</div>
+            <div>
+              <div class="alf-name">Best Organic Farmer Award</div>
+              <div class="alf-org">Rajasthan Chief Minister Ashok Gehlot</div>
+            </div>
+            <div class="alf-year">2022</div>
+          </div>
+          <div class="alf-item">
+            <div class="alf-icon">📰</div>
+            <div>
+              <div class="alf-name">ICAR Farmer Innovator Feature</div>
+              <div class="alf-org">Published in ICAR Startup Stories as model farm innovator</div>
+            </div>
+            <div class="alf-year">2024</div>
+          </div>
+          <div class="alf-item">
+            <div class="alf-icon">🔬</div>
+            <div>
+              <div class="alf-name">ICAR SRF Research Excellence</div>
+              <div class="alf-org">ICAR All India Network Project on Organic Farming</div>
+            </div>
+            <div class="alf-year">2020</div>
+          </div>
+          <div class="alf-item">
+            <div class="alf-icon">🏅</div>
+            <div>
+              <div class="alf-name">10 National Awards Total</div>
+              <div class="alf-org">Various national-level agriculture & innovation recognitions</div>
+            </div>
+            <div class="alf-year">2020+</div>
+          </div>
+          <div class="alf-item">
+            <div class="alf-icon">📱</div>
+            <div>
+              <div class="alf-name">145K+ Social Media Following</div>
+              <div class="alf-org">Instagram @dr_sharvan_yadav · 1M+ YouTube views</div>
+            </div>
+            <div class="alf-year">2024</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ICAR STORY -->
+<section class="icar-story-section">
+  <div class="section-wrap">
+    <div class="icar-grid">
+      <div class="reveal">
+        <div class="icar-img">
+          <img id="icarDocImg" src="" alt="ICAR Startup Story — Dr. Sharvan Kumar Yadav">
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="section-label">ICAR Recognition / ICAR मान्यता</div>
+        <h3 class="icar-text" style="font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--text-dark);line-height:1.2;margin-bottom:0.5rem;">Published as a Model Farmer Innovator by ICAR</h3>
+        <p class="section-hi hindi" style="margin-bottom:1rem;">भारतीय कृषि अनुसंधान परिषद द्वारा आदर्श नवाचारी किसान के रूप में प्रकाशित</p>
+        <div class="icar-text">
+          <p>Dr. Sharvan Kumar Yadav's farm and innovation work was featured by ICAR (Indian Council of Agricultural Research) as a model startup story — recognising his contributions to vermicompost production, organic input development, and farmer training.</p>
+          <p>His work includes developing multiple vermicompost production systems (above-ground, underground, flour-based, HDPE, windrow), creating organic formulations like Brahmastra, Ghanjeevamrit, Dashparni Ark, and enriched vermicompost pellets.</p>
+          <p>ICAR institutes, state universities, and ATMA officials have validated his innovations through farm visits, research interactions, and official certifications.</p>
+        </div>
+        <div class="icar-tags">
+          <span class="icar-tag">🔬 ICAR Validated</span>
+          <span class="icar-tag">📜 Govt. Rajasthan Licensed</span>
+          <span class="icar-tag">🏛️ MPUAT Recognised</span>
+          <span class="icar-tag">🌾 ATMA Certified</span>
+          <span class="icar-tag">📰 Krishi Jagran Featured</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="background:var(--moss);padding:3rem 5%;text-align:center;">
+  <h2 class="serif" style="color:white;font-size:2rem;margin-bottom:0.5rem;">Ready to Join the Organic Revolution?</h2>
+  <p class="hindi" style="color:rgba(255,255,255,0.8);margin-bottom:1.5rem;font-family:'Noto Sans Devanagari',sans-serif;">जैविक क्रांति का हिस्सा बनें — आज ही सम्पर्क करें</p>
+  <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+    <a class="btn-green" style="background:white;color:var(--moss);" href="products.html">🛒 Buy Products</a>
+    <a href="https://wa.me/916377544290?text=Namaste%20Dr.%20Sharvan%20ji%2C%20I%20want%20to%20connect%20with%20you." target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#25D366;color:white;padding:13px 28px;border-radius:6px;font-size:14px;font-weight:700;text-decoration:none;">💬 WhatsApp Now</a>
+    <a class="btn-ghost" style="border-color:rgba(255,255,255,0.5);color:white;" href="training.html">🎓 Free Training</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:0.8rem;">
+        <div class="logo-icon">🌿</div>
+        <div class="logo-text-wrap">
+          <div class="logo-main">Dr. Organic Vermicompost Farm</div>
+          <div class="logo-sub">Est. 2020 · Jaipur, Rajasthan</div>
+        </div>
+      </div>
+      <p>India's most trusted vermicompost farm. Pure. Scientific. Organic.</p>
+      <p style="margin-top:0.5rem;color:rgba(248,243,232,0.35);font-size:11px;">📧 sharvan5825@gmail.com</p>
+    </div>
+    <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="products.html">Products</a></li><li><a href="training.html">Training</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+917976996775">📞 7976996775</a></li><li><a href="tel:+916377544290">📞 6377-544290</a></li><li><a href="mailto:sharvan5825@gmail.com">✉️ Email</a></li><li><a href="https://wa.me/916377544290" target="_blank">💬 WhatsApp</a></li></ul></div>
+    <div class="footer-col"><h4>Follow</h4><ul><li><a href="https://www.youtube.com/@dr.organicfarming1467" target="_blank">▶ YouTube</a></li><li><a href="https://www.instagram.com/dr_sharvan_yadav/" target="_blank">📸 Instagram</a></li><li><a href="https://www.facebook.com/p/Dr-Organic-Vermicompst-Farm-100064180596347/" target="_blank">f Facebook</a></li><li><a href="https://www.linkedin.com/in/dr-sharvan-yadav-a22bbb219/" target="_blank">in LinkedIn</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2024 Dr. Organic Vermicompost Farm · Village Sundarpura, Kishangarh Renwal, Tehsil Phulera, Jaipur, Rajasthan — 303602</div>
+    <div class="footer-tagline serif">Heal the Soil. Feed the Nation. 🌱</div>
+  </div>
+</footer>
+
+<script src="js/images.js"></script>
+<script>
+  window.addEventListener('load', function() {
+    if(typeof img_founder !== 'undefined') {
+      document.getElementById('heroFounderImg').src = img_founder;
+      document.getElementById('aboutFounderMain').src = img_founder;
+    }
+    if(typeof img_training1 !== 'undefined') document.getElementById('aboutTrainImg').src = img_training1;
+    if(typeof img_award !== 'undefined') document.getElementById('awardCertImg').src = img_award;
+    if(typeof img_icar !== 'undefined') document.getElementById('icarDocImg').src = img_icar;
+  });
+  window.addEventListener('scroll', function() {
+    const nav = document.getElementById('mainNav');
+    if(window.scrollY > 50) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
+  });
+  function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e,i) => { if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('visible'),i*80); observer.unobserve(e.target); } });
+  }, {threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>

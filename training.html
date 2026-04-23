@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free vermicompost training by Dr. Sharvan Kumar Yadav. Farm visit, online course, start your own unit. 20,000+ farmers trained across India.">
+  <title>Training Programs | Dr. Organic Vermicompost Farm</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+  <style>
+    .page-hero { background: linear-gradient(160deg, #1e2d12 0%, #2a3d1a 100%); padding: 120px 5% 4rem; position: relative; overflow: hidden; }
+    .page-hero::before { content: ''; position: absolute; top: -80px; right: -80px; width: 400px; height: 400px; background: rgba(126,184,58,0.15); border-radius: 50%; filter: blur(60px); }
+    .page-hero-content { position: relative; z-index: 1; max-width: 700px; }
+    .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3rem); color: var(--cream); margin-bottom: 0.5rem; }
+    .page-hero p { color: rgba(248,243,232,0.7); font-size: 15px; line-height: 1.7; }
+
+    .training-full { background: var(--cream); padding: 4rem 0; }
+    .training-full-card {
+      background: white;
+      border-radius: 16px;
+      border: 1px solid rgba(61,92,42,0.12);
+      overflow: hidden;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      transition: box-shadow 0.3s;
+    }
+    .training-full-card:hover { box-shadow: 0 20px 60px rgba(0,0,0,0.1); }
+    .tfc-header {
+      background: linear-gradient(135deg, var(--moss), var(--leaf));
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .tfc-header::after { content: ''; position: absolute; right: -30px; top: -30px; width: 150px; height: 150px; background: rgba(255,255,255,0.08); border-radius: 50%; }
+    .tfc-icon { font-size: 3.5rem; flex-shrink: 0; }
+    .tfc-header-text {}
+    .tfc-tag { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 4px; }
+    .tfc-name { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: white; line-height: 1.2; }
+    .tfc-name-hi { font-family: 'Noto Sans Devanagari', sans-serif; color: rgba(255,255,255,0.8); font-size: 1rem; margin-top: 4px; }
+    .tfc-price-badge { margin-left: auto; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); border-radius: 8px; padding: 10px 18px; text-align: center; flex-shrink: 0; }
+    .tfc-price-num { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--lime); font-weight: 700; display: block; }
+    .tfc-price-lbl { font-size: 11px; color: rgba(255,255,255,0.7); }
+
+    .tfc-body { padding: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .tfc-desc { font-size: 14px; color: var(--text-mid); line-height: 1.85; margin-bottom: 1.2rem; }
+    .tfc-curriculum h4 { font-weight: 700; font-size: 13px; color: var(--text-dark); margin-bottom: 0.8rem; letter-spacing: 0.3px; }
+    .tfc-curriculum ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .tfc-curriculum li { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; color: var(--text-mid); }
+    .tfc-curriculum li::before { content: '✓'; color: var(--moss); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+    .tfc-details { display: flex; flex-direction: column; gap: 10px; }
+    .tfc-detail-item { display: flex; gap: 10px; align-items: flex-start; padding: 10px; background: rgba(61,92,42,0.05); border-radius: 8px; border: 1px solid rgba(61,92,42,0.1); }
+    .tfc-detail-icon { font-size: 1.2rem; flex-shrink: 0; }
+    .tfc-detail-label { font-size: 11px; font-weight: 700; color: var(--moss); letter-spacing: 0.5px; display: block; }
+    .tfc-detail-val { font-size: 13px; color: var(--text-dark); }
+
+    .tfc-footer { padding: 1.5rem 2rem; border-top: 1px solid rgba(61,92,42,0.1); display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+    .tfc-register {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #25D366; color: white;
+      border: none; padding: 13px 28px; border-radius: 6px;
+      font-size: 14px; font-weight: 700; cursor: pointer;
+      text-decoration: none; transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .tfc-register:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,211,102,0.4); }
+    .tfc-call { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--moss); border: 1.5px solid var(--moss); padding: 13px 24px; border-radius: 6px; font-size: 14px; font-weight: 700; text-decoration: none; transition: all 0.2s; }
+    .tfc-call:hover { background: var(--moss); color: white; }
+
+    .impact-section { background: var(--soil); padding: 4rem 0; }
+    .impact-section .section-label { color: var(--sprout); }
+    .impact-section .section-label::after { background: var(--sprout); }
+    .impact-section .section-h { color: var(--cream); }
+    .impact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem; }
+    .impact-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(126,184,58,0.2); border-radius: 12px; padding: 1.5rem; text-align: center; }
+    .impact-num { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--sprout); font-weight: 700; display: block; }
+    .impact-lbl { color: var(--wheat); font-size: 14px; margin-top: 4px; }
+    .impact-desc { color: rgba(248,243,232,0.5); font-size: 12px; margin-top: 6px; line-height: 1.5; }
+
+    @media(max-width:768px){
+      .tfc-body { grid-template-columns: 1fr; }
+      .tfc-header { flex-wrap: wrap; }
+      .tfc-price-badge { margin-left: 0; }
+      .impact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<a class="float-wa" href="https://wa.me/916377544290?text=Namaste%20Dr.%20Sharvan%20ji%2C%20I%20want%20to%20register%20for%20training." target="_blank">
+  <span class="float-wa-tooltip">Register on WhatsApp</span>
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<nav id="mainNav">
+  <a class="nav-logo" href="index.html">
+    <div class="logo-icon">🌿</div>
+    <div class="logo-text-wrap">
+      <div class="logo-main">Dr. Organic Vermicompost Farm</div>
+      <div class="logo-sub">Sundarpura, Jaipur · Est. 2020</div>
+    </div>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="training.html" class="active">Training</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:12px;">
+    <a class="nav-wa-btn" href="https://wa.me/916377544290" target="_blank">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <span>WhatsApp</span>
+    </a>
+    <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-content">
+    <div class="hero-badge">🎓 Training / प्रशिक्षण</div>
+    <h1 class="serif">Learn Vermicomposting<br><em style="color:var(--sprout)">from a PhD Expert</em></h1>
+    <p class="hindi" style="color:var(--wheat);margin:0.5rem 0;font-family:'Noto Sans Devanagari',sans-serif;">मुफ़्त प्रशिक्षण — Dr. Organic के साथ अपना व्यवसाय शुरू करें</p>
+    <p>20,000+ farmers trained across India. From farm visit to online course to starting your own income-generating unit — we guide you every step.</p>
+  </div>
+</div>
+
+<section class="training-full">
+  <div class="section-wrap">
+
+    <!-- Program 1 -->
+    <div class="training-full-card reveal">
+      <div class="tfc-header">
+        <div class="tfc-icon">📅</div>
+        <div class="tfc-header-text">
+          <div class="tfc-tag">Most Popular · सबसे लोकप्रिय</div>
+          <div class="tfc-name serif">1-Day Farm Visit Training</div>
+          <div class="tfc-name-hi hindi">1 दिवसीय खेत प्रशिक्षण — सुंदरपुरा, जयपुर</div>
+        </div>
+        <div class="tfc-price-badge">
+          <span class="tfc-price-num">FREE</span>
+          <span class="tfc-price-lbl">No Charges Ever</span>
+        </div>
+      </div>
+      <div class="tfc-body">
+        <div>
+          <div class="tfc-desc">Visit Dr. Sharvan ji's farm at Sundarpura, Jaipur for a full-day hands-on training. Learn the complete A-to-Z of vermicompost production — from setting up beds to harvesting, packaging and selling. Thousands of farmers from across India attend every training batch.</div>
+          <div class="tfc-curriculum">
+            <h4>What You'll Learn / क्या सीखेंगे</h4>
+            <ul>
+              <li>Earthworm biology & selection of species</li>
+              <li>Setting up vermicompost beds (above/underground/HDPE)</li>
+              <li>Raw material preparation — cow dung treatment</li>
+              <li>Bed management — moisture, temperature, feeding</li>
+              <li>Harvesting vermicompost & separating earthworms</li>
+              <li>Making Vermiwash, Jeevamrit & other inputs</li>
+              <li>Packaging, pricing & selling your product</li>
+              <li>Starting a unit with just 10×3 ft space</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tfc-details">
+          <div class="tfc-detail-item">
+            <div class="tfc-detail-icon">📍</div>
+            <div>
+              <span class="tfc-detail-label">Location</span>
+              <span class="tfc-detail-val">Dr. Organic Vermicompost Farm, Village Sundarpura, Kishangarh Renwal, Jaipur</span>
+            </div>
+          </div>
+          <div class="tfc-detail-item">
+            <div class="tfc-detail-icon">📅</div>
+            <div>
+              <span class="tfc-detail-label">Schedule</span>
+              <span class="tfc-detail-val">Monthly batches — WhatsApp to know next date</span>
+            </div>
+          </div>
+          <div class="tfc-detail-item">
+            <div class="tfc-detail-icon">👥</div>
+            <div>
+              <span class="tfc-detail-label">Who Can Attend</span>
+              <span class="tfc-detail-val">Farmers, students, entrepreneurs, anyone interested in organic farming</span>
+            </div>
+          </div>
+          <div class="tfc-detail-item">
+            <div class="tfc-detail-icon">🗣️</div>
+            <div>
+              <span class="tfc-detail-label">Language</span>
+              <span class="tfc-detail-val">Hindi (primarily) + English explanations available</span>
+            </div>
+          </div>
+          <div class="tfc-detail-item">
+            <div class="tfc-detail-icon">🎓</div>
+            <div>
+              <span class="tfc-detail-label">Certificate</span>
+              <span class="tfc-detail-val">Certificate of Participation issued by Dr. Organic Farm</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tfc-footer">
+        <a class="tfc-register" href="https://wa.me/916377544290?text=Namaste%20Dr.%20Sharvan%20ji%2C%20I%20want%20to%20register%20for%20the%201-day%20farm%20visit%20training%20at%20Sundarpura%20Jaipur.%20Please%20share%20the%20next%20batch%20date." target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Register Free on WhatsApp
+        </a>
+        <a class="tfc-call" href="tel:+917976996775">📞 7976996775</a>
+      </div>
+    </div>
+
+    <!-- Program 2 -->
+    <div class="training-full-card reveal">
+      <div class="tfc-header" style="background:linear-gradient(135deg,#1a3d4a,#2a6a7a);">
+        <div class="tfc-icon">💻</div>
+        <div class="tfc-header-text">
+          <div class="tfc-tag">Online · घर बैठे सीखें</div>
+          <div class="tfc-name serif">Online Video Course</div>
+          <div class="tfc-name-hi hindi">ऑनलाइन वर्मीकम्पोस्ट कोर्स — Lifetime Access</div>
+        </div>
+        <div class="tfc-price-badge">
+          <span class="tfc-price-num">₹999</span>
+          <span class="tfc-price-lbl">Lifetime Access</span>
+        </div>
+      </div>
+      <div class="tfc-body">
+        <div>
+          <div class="tfc-desc">Can't travel to Jaipur? No problem. The complete vermicompost course is available online with lifetime access. Learn at your own pace from home. Live doubt-clearing sessions ensure all your questions are answered directly by Dr. Sharvan ji.</div>
+          <div class="tfc-curriculum">
+            <h4>Course Includes / कोर्स में क्या है</h4>
+            <ul>
+              <li>Complete video lectures — A to Z vermicomposting</li>
+              <li>Live interactive doubt clearing sessions</li>
+              <li>Private WhatsApp group with peers</li>
+              <li>Business setup and marketing guidance</li>
+              <li>Pricing, packaging and sales strategy</li>
+              <li>How to earn ₹50,000/month from 10×3 ft</li>
+              <li>Hindi & English both available</li>
+              <li>Lifetime access — watch anytime, anywhere</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tfc-details">
+          <div class="tfc-detail-item">
+            <div class="tfc-detail-icon">📱</div>
+            <div>
+              <span class="tfc-detail-label">Platform</span>
+              <span class="tfc-detail-val">WhatsApp group + video links shared after enrollment</span>
+            </div>
+          </div>
+          <div class="tfc-detail-item">
+            <div class="tfc-detail-icon">⏰</div>
+            <div>
+              <span class="tfc-detail-label">Duration</span>
+              <span class="tfc-detail-val">Self-paced — complete in your own time. Lifetime access.</span>
+            </div>
+          </div>
+          <div class="tfc-detail-item">
+            <div class="tfc-detail-icon">🗣️</div>
+            <div>
+              <span class="tfc-detail-label">Language</span>
+              <span class="tfc-detail-val">Hindi + English — experts fluent in both</span>
+            </div>
+          </div>
+          <div class="tfc-detail-item">
+            <div class="tfc-detail-icon">💳</div>
+            <div>
+              <span class="tfc-detail-label">Payment</span>
+              <span class="tfc-detail-val">UPI / Bank Transfer — details shared on WhatsApp</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tfc-footer">
+        <a class="tfc-register" href="https://wa.me/916377544290?text=Namaste%20Dr.%20Sharvan%20ji%2C%20I%20want%20to%20enroll%20in%20the%20online%20vermicompost%20course%20for%20%E2%82%B9999.%20Please%20share%20payment%20details." target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Enroll via WhatsApp
+        </a>
+        <a class="tfc-call" href="tel:+916377544290">📞 6377-544290</a>
+      </div>
+    </div>
+
+    <!-- Program 3 -->
+    <div class="training-full-card reveal">
+      <div class="tfc-header" style="background:linear-gradient(135deg,#5c3317,#8b5e3c);">
+        <div class="tfc-icon">🤝</div>
+        <div class="tfc-header-text">
+          <div class="tfc-tag">Business Setup · व्यवसाय शुरू करें</div>
+          <div class="tfc-name serif">Start Your Own Vermicompost Unit</div>
+          <div class="tfc-name-hi hindi">खुद की यूनिट लगाएं — ₹50,000/माह कमाएं</div>
+        </div>
+        <div class="tfc-price-badge">
+          <span class="tfc-price-num" style="font-size:1.2rem;">Full Support</span>
+          <span class="tfc-price-lbl">End-to-End Guidance</span>
+        </div>
+      </div>
+      <div class="tfc-body">
+        <div>
+          <div class="tfc-desc">You don't need a large farm. Just 10×3 feet of space is enough to start earning ₹50,000 per month from vermicompost. Dr. Sharvan ji personally guides you from setup to your first sale. We supply the earthworms, you build the business.</div>
+          <div class="tfc-curriculum">
+            <h4>Full Support Package Includes</h4>
+            <ul>
+              <li>Earthworm supply from Dr. Organic Farm</li>
+              <li>On-site setup guidance (or remote via video call)</li>
+              <li>Raw material sourcing advice</li>
+              <li>Bed construction guidance</li>
+              <li>First harvest to first sale — complete support</li>
+              <li>Ongoing WhatsApp mentorship group</li>
+              <li>Marketing strategy & customer finding tips</li>
+              <li>Pricing & packaging guidance</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tfc-details">
+          <div class="tfc-detail-item">
+            <div class="tfc-detail-icon">📐</div>
+            <div>
+              <span class="tfc-detail-label">Minimum Space Needed</span>
+              <span class="tfc-detail-val">10×3 feet — even a small backyard or terrace works</span>
+            </div>
+          </div>
+          <div class="tfc-detail-item">
+            <div class="tfc-detail-icon">💰</div>
+            <div>
+              <span class="tfc-detail-label">Expected Income</span>
+              <span class="tfc-detail-val">₹30,000–₹50,000/month after 3–4 months setup</span>
+            </div>
+          </div>
+          <div class="tfc-detail-item">
+            <div class="tfc-detail-icon">⏱️</div>
+            <div>
+              <span class="tfc-detail-label">Time to First Harvest</span>
+              <span class="tfc-detail-val">45–60 days from setup to first vermicompost batch</span>
+            </div>
+          </div>
+          <div class="tfc-detail-item">
+            <div class="tfc-detail-icon">👨‍🌾</div>
+            <div>
+              <span class="tfc-detail-label">Who It's For</span>
+              <span class="tfc-detail-val">Farmers, homemakers, youth — anyone wanting income from organic business</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tfc-footer">
+        <a class="tfc-register" href="https://wa.me/916377544290?text=Namaste%20Dr.%20Sharvan%20ji%2C%20I%20want%20to%20start%20my%20own%20vermicompost%20unit%20with%20your%20guidance.%20Please%20tell%20me%20how%20to%20start." target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Get Started on WhatsApp
+        </a>
+        <a class="tfc-call" href="tel:+917976996775">📞 7976996775</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT -->
+<section class="impact-section">
+  <div class="section-wrap">
+    <div class="section-label">Training Impact / प्रशिक्षण का प्रभाव</div>
+    <h2 class="section-h serif">Numbers That Speak</h2>
+    <div class="impact-grid">
+      <div class="impact-card reveal">
+        <span class="impact-num">20,000+</span>
+        <div class="impact-lbl">Farmers Trained Across India</div>
+        <div class="impact-desc">From Rajasthan to Bengal, Kerala to Punjab — Dr. Sharvan ji's training has reached every corner of India</div>
+      </div>
+      <div class="impact-card reveal">
+        <span class="impact-num">500+</span>
+        <div class="impact-lbl">Attendees Per Batch</div>
+        <div class="impact-desc">Single training batches at the farm regularly attract 400–600+ farmers from across India</div>
+      </div>
+      <div class="impact-card reveal">
+        <span class="impact-num">₹50K</span>
+        <div class="impact-lbl">Monthly Income Possible</div>
+        <div class="impact-desc">In just 10×3 feet, trained farmers are earning ₹30,000–₹50,000 per month from their own units</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:0.8rem;">
+        <div class="logo-icon">🌿</div>
+        <div class="logo-text-wrap">
+          <div class="logo-main">Dr. Organic Vermicompost Farm</div>
+          <div class="logo-sub">Est. 2020 · Jaipur, Rajasthan</div>
+        </div>
+      </div>
+      <p>India's most trusted vermicompost farm. Pure. Scientific. Organic.</p>
+    </div>
+    <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="products.html">Products</a></li><li><a href="training.html">Training</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+917976996775">📞 7976996775</a></li><li><a href="tel:+916377544290">📞 6377-544290</a></li><li><a href="mailto:sharvan5825@gmail.com">✉️ Email</a></li><li><a href="https://wa.me/916377544290" target="_blank">💬 WhatsApp</a></li></ul></div>
+    <div class="footer-col"><h4>Follow</h4><ul><li><a href="https://www.youtube.com/@dr.organicfarming1467" target="_blank">▶ YouTube</a></li><li><a href="https://www.instagram.com/dr_sharvan_yadav/" target="_blank">📸 Instagram</a></li><li><a href="https://www.facebook.com/p/Dr-Organic-Vermicompst-Farm-100064180596347/" target="_blank">f Facebook</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2024 Dr. Organic Vermicompost Farm · Sundarpura, Jaipur, Rajasthan — 303602</div>
+    <div class="footer-tagline serif">Heal the Soil. Feed the Nation. 🌱</div>
+  </div>
+</footer>
+
+<script src="js/images.js"></script>
+<script>
+  window.addEventListener('scroll', function() {
+    const nav = document.getElementById('mainNav');
+    if(window.scrollY > 50) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
+  });
+  function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e,i) => { if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('visible'),i*80); observer.unobserve(e.target); } });
+  }, {threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>

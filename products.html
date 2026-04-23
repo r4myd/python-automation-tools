@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Buy premium vermicompost, live earthworms, vermiwash and organic inputs from Dr. Organic Vermicompost Farm, Jaipur. India's highest quality — 2000 earthworms/kg.">
+  <title>Products | Dr. Organic Vermicompost Farm</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+  <style>
+    .page-hero {
+      background: var(--soil);
+      padding: 120px 5% 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 400px; height: 400px;
+      background: rgba(61,92,42,0.3);
+      border-radius: 50%;
+      filter: blur(60px);
+    }
+    .page-hero-content { position: relative; z-index: 1; max-width: 700px; }
+    .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3rem); color: var(--cream); margin-bottom: 0.5rem; }
+    .page-hero p { color: rgba(248,243,232,0.7); font-size: 15px; line-height: 1.7; }
+    .page-hero .hero-badge { margin-bottom: 1rem; }
+
+    .products-full-section { background: var(--cream); padding: 4rem 0; }
+
+    .product-full-card {
+      background: white;
+      border-radius: 16px;
+      border: 1px solid rgba(61,92,42,0.12);
+      overflow: hidden;
+      margin-bottom: 2rem;
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      transition: box-shadow 0.3s;
+    }
+    .product-full-card:hover { box-shadow: 0 20px 60px rgba(0,0,0,0.1); }
+    .product-full-card.reverse { direction: rtl; }
+    .product-full-card.reverse > * { direction: ltr; }
+
+    .pfc-img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      min-height: 220px;
+      position: relative;
+    }
+    .pfc-img-vc { background: linear-gradient(135deg, #6b4226, #a0724a); }
+    .pfc-img-ew { background: linear-gradient(135deg, #4a2010, #8b4030); }
+    .pfc-img-vw { background: linear-gradient(135deg, #1a4a1a, #3a7a3a); }
+    .pfc-img-jv { background: linear-gradient(135deg, #1a3d4a, #2a6a7a); }
+    .pfc-img-pc { background: linear-gradient(135deg, #3a2a1a, #7a5a3a); }
+    .pfc-img-nm { background: linear-gradient(135deg, #2a3a10, #5a6a20); }
+    .pfc-img-vp { background: linear-gradient(135deg, #2a1a4a, #5a3a8a); }
+    .pfc-img-bj { background: linear-gradient(135deg, #1a4a2a, #3a8a5a); }
+
+    .pfc-body { padding: 2rem; }
+    .pfc-tag { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--moss); margin-bottom: 6px; }
+    .pfc-name { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--text-dark); margin-bottom: 3px; }
+    .pfc-name-hi { font-family: 'Noto Sans Devanagari', sans-serif; font-size: 1rem; color: var(--text-light); margin-bottom: 1rem; }
+    .pfc-desc { font-size: 14px; color: var(--text-mid); line-height: 1.8; margin-bottom: 1.2rem; }
+    .pfc-benefits {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 1.2rem;
+    }
+    .pfc-benefit {
+      background: rgba(61,92,42,0.08);
+      color: var(--moss);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      border: 1px solid rgba(61,92,42,0.15);
+    }
+    .pfc-price-row {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      padding: 1rem;
+      background: rgba(61,92,42,0.05);
+      border-radius: 8px;
+      border: 1px solid rgba(61,92,42,0.1);
+      margin-bottom: 1.2rem;
+    }
+    .pfc-price { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--moss); font-weight: 700; }
+    .pfc-price span { font-family: 'Lato', sans-serif; font-size: 12px; color: var(--text-light); font-weight: 400; }
+    .pfc-min { font-size: 12px; color: var(--text-light); }
+    .pfc-min strong { color: var(--text-dark); }
+    .pfc-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .pfc-wa-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #25D366;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .pfc-wa-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,211,102,0.4); }
+    .pfc-call-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--moss);
+      border: 1.5px solid var(--moss);
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .pfc-call-btn:hover { background: var(--moss); color: white; }
+
+    .why-us-section { background: var(--soil); padding: 4rem 0; }
+    .why-us-section .section-label { color: var(--sprout); }
+    .why-us-section .section-label::after { background: var(--sprout); }
+    .why-us-section .section-h { color: var(--cream); }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .why-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(126,184,58,0.2);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: all 0.3s;
+    }
+    .why-card:hover { border-color: rgba(126,184,58,0.5); transform: translateY(-3px); }
+    .why-icon { font-size: 2.5rem; margin-bottom: 0.8rem; display: block; }
+    .why-title { font-family: 'Playfair Display', serif; color: var(--cream); font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .why-desc { color: rgba(248,243,232,0.7); font-size: 13px; line-height: 1.7; }
+
+    .delivery-section { background: #f0ebe0; padding: 4rem 0; }
+    .delivery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .dc {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      border: 1px solid rgba(61,92,42,0.1);
+      transition: transform 0.2s;
+    }
+    .dc:hover { transform: translateY(-3px); }
+    .dc-icon { font-size: 2.5rem; margin-bottom: 0.8rem; }
+    .dc-title { font-weight: 700; font-size: 14px; color: var(--text-dark); margin-bottom: 0.4rem; }
+    .dc-desc { font-size: 12px; color: var(--text-light); line-height: 1.6; }
+
+    @media (max-width: 768px) {
+      .product-full-card { grid-template-columns: 1fr; }
+      .product-full-card.reverse { direction: ltr; }
+      .pfc-img { min-height: 160px; }
+      .why-grid { grid-template-columns: 1fr; }
+      .delivery-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<a class="float-wa" href="https://wa.me/916377544290?text=Namaste%20Dr.%20Sharvan%20ji%2C%20I%20want%20to%20order%20your%20products." target="_blank">
+  <span class="float-wa-tooltip">Order on WhatsApp</span>
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<nav id="mainNav">
+  <a class="nav-logo" href="index.html">
+    <div class="logo-icon">🌿</div>
+    <div class="logo-text-wrap">
+      <div class="logo-main">Dr. Organic Vermicompost Farm</div>
+      <div class="logo-sub">Sundarpura, Jaipur · Est. 2020</div>
+    </div>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="products.html" class="active">Products</a></li>
+    <li><a href="training.html">Training</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:12px;">
+    <a class="nav-wa-btn" href="https://wa.me/916377544290" target="_blank">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <span>WhatsApp</span>
+    </a>
+    <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-content">
+    <div class="hero-badge">🛒 All Products / सभी उत्पाद</div>
+    <h1 class="serif">Pure Organic Products<br><em style="color:var(--sprout)">Direct from the Farm</em></h1>
+    <p class="hindi" style="color:var(--wheat);margin:0.5rem 0;font-family:'Noto Sans Devanagari',sans-serif;">100% जैविक — ICAR प्रमाणित — सीधे खेत से आपके द्वार</p>
+    <p>Every product made with 15+ years of research expertise. No chemicals. No middlemen. Pure science-backed organic inputs for your farm.</p>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<section class="products-full-section">
+  <div class="section-wrap">
+
+    <!-- Vermicompost -->
+    <div class="product-full-card reveal">
+      <div class="pfc-img pfc-img-vc">🪱</div>
+      <div class="pfc-body">
+        <div class="pfc-tag">Best Seller · सबसे लोकप्रिय</div>
+        <div class="pfc-name serif">Premium Vermicompost</div>
+        <div class="pfc-name-hi hindi">प्रीमियम वर्मीकम्पोस्ट खाद</div>
+        <div class="pfc-desc">Produced from pure cow dung using Eisenia fetida earthworms. Rich in macro & micro nutrients — NPK, humic acid, beneficial microorganisms. Improves soil structure, water retention and boosts crop yield by 30–50%. Suitable for all crops — vegetables, fruits, wheat, cotton, floriculture and more. Available on Amazon & Flipkart also.</div>
+        <div class="pfc-benefits">
+          <span class="pfc-benefit">✅ ICAR Researched</span>
+          <span class="pfc-benefit">🌾 30–50% Yield Increase</span>
+          <span class="pfc-benefit">💧 Better Water Retention</span>
+          <span class="pfc-benefit">🪲 Enriched Microbiome</span>
+          <span class="pfc-benefit">🚫 Zero Chemicals</span>
+          <span class="pfc-benefit">📦 All India Delivery</span>
+        </div>
+        <div class="pfc-price-row">
+          <div>
+            <div class="pfc-price">Contact for Price <span>/ kg</span></div>
+            <div class="pfc-min">Min Order: <strong>50 kg</strong> &nbsp;·&nbsp; Bulk discounts available</div>
+          </div>
+        </div>
+        <div class="pfc-btns">
+          <a class="pfc-wa-btn" href="https://wa.me/916377544290?text=Namaste%20Dr.%20Sharvan%20ji%2C%20I%20want%20to%20buy%20Vermicompost.%20Please%20share%20the%20price%20and%20availability." target="_blank">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Order on WhatsApp
+          </a>
+          <a class="pfc-call-btn" href="tel:+917976996775">📞 Call Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Earthworms -->
+    <div class="product-full-card reverse reveal">
+      <div class="pfc-img pfc-img-ew">🐛</div>
+      <div class="pfc-body">
+        <div class="pfc-tag">India's Highest Density · भारत का सर्वश्रेष्ठ</div>
+        <div class="pfc-name serif">Live Eisenia Fetida Earthworms</div>
+        <div class="pfc-name-hi hindi">जीवित केंचुए — 2000 प्रति किलो</div>
+        <div class="pfc-desc">India's highest earthworm density — 2000 worms per kg. While other suppliers give 400–500 worms/kg, Dr. Organic gives 2000/kg. These are healthy, active Eisenia fetida (Red Wiggler) earthworms — the best species for vermicomposting. Ideal for setting up your own vermicompost unit, nurseries, organic farms and research.</div>
+        <div class="pfc-benefits">
+          <span class="pfc-benefit">🏆 2000 Worms/kg</span>
+          <span class="pfc-benefit">✅ Eisenia Fetida Species</span>
+          <span class="pfc-benefit">💪 Active & Healthy</span>
+          <span class="pfc-benefit">🚚 Safe Packed Delivery</span>
+          <span class="pfc-benefit">📞 Post-sale Support</span>
+        </div>
+        <div class="pfc-price-row">
+          <div>
+            <div class="pfc-price">Contact for Price <span>/ kg</span></div>
+            <div class="pfc-min">Safe delivery packaging &nbsp;·&nbsp; PAN India delivery available</div>
+          </div>
+        </div>
+        <div class="pfc-btns">
+          <a class="pfc-wa-btn" href="https://wa.me/916377544290?text=Namaste%20Dr.%20Sharvan%20ji%2C%20I%20want%20to%20buy%20live%20earthworms.%20Please%20share%20price%20and%20delivery%20details." target="_blank">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Order on WhatsApp
+          </a>
+          <a class="pfc-call-btn" href="tel:+916377544290">📞 Call Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vermiwash -->
+    <div class="product-full-card reveal">
+      <div class="pfc-img pfc-img-vw">💧</div>
+      <div class="pfc-body">
+        <div class="pfc-tag">Liquid Gold / तरल जैविक खाद</div>
+        <div class="pfc-name serif">Vermiwash</div>
+        <div class="pfc-name-hi hindi">वर्मीवाश — तरल जैव उर्वरक</div>
+        <div class="pfc-desc">The liquid that drips through the vermicompost bed — nature's most potent plant tonic. Rich in enzymes, plant growth hormones, beneficial bacteria and dissolved nutrients. Works as a natural pesticide, fungicide and growth promoter. Dilute 1:10 with water and spray directly on leaves or soil drench.</div>
+        <div class="pfc-benefits">
+          <span class="pfc-benefit">🌿 Natural Growth Promoter</span>
+          <span class="pfc-benefit">🐛 Organic Pest Repellent</span>
+          <span class="pfc-benefit">🍃 Foliar Spray Ready</span>
+          <span class="pfc-benefit">🧪 Enzyme Rich</span>
+          <span class="pfc-benefit">💧 Dilute 1:10</span>
+        </div>
+        <div class="pfc-price-row">
+          <div>
+            <div class="pfc-price">Contact for Price <span>/ litre</span></div>
+            <div class="pfc-min">Bulk orders available &nbsp;·&nbsp; Delivery across India</div>
+          </div>
+        </div>
+        <div class="pfc-btns">
+          <a class="pfc-wa-btn" href="https://wa.me/916377544290?text=Namaste%20Dr.%20Sharvan%20ji%2C%20I%20want%20to%20buy%20Vermiwash.%20Please%20share%20price%20and%20quantity%20available." target="_blank">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Order on WhatsApp
+          </a>
+          <a class="pfc-call-btn" href="tel:+917976996775">📞 Call Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Other Products Grid -->
+    <div style="margin-top:1rem;">
+      <h3 class="serif" style="font-size:1.5rem;color:var(--text-dark);margin-bottom:1.5rem;">More Organic Inputs / अन्य जैविक उत्पाद</h3>
+      <div class="products-grid">
+        <div class="product-card reveal">
+          <div class="product-img pi-jv">🌿</div>
+          <div class="p-body">
+            <div class="p-name serif">Jeevamrit</div>
+            <div class="p-name-hi hindi">जीवामृत</div>
+            <div class="p-desc">Fermented liquid manure from cow dung, urine, gram flour, jaggery & soil. Activates soil microbiome and boosts plant immunity.</div>
+            <a class="p-wa-btn" href="https://wa.me/916377544290?text=I%20want%20to%20enquire%20about%20Jeevamrit." target="_blank">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Enquire on WhatsApp
+            </a>
+          </div>
+        </div>
+        <div class="product-card reveal">
+          <div class="product-img pi-ew" style="background:linear-gradient(135deg,#3a2a0a,#7a5a1a);">🐄</div>
+          <div class="p-body">
+            <div class="p-name serif">Panchagavya</div>
+            <div class="p-name-hi hindi">पंचगव्य</div>
+            <div class="p-desc">Blend of 5 cow-derived products — dung, urine, milk, curd, ghee. Powerful plant tonic, immune booster and yield enhancer.</div>
+            <a class="p-wa-btn" href="https://wa.me/916377544290?text=I%20want%20to%20enquire%20about%20Panchagavya." target="_blank">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Enquire on WhatsApp
+            </a>
+          </div>
+        </div>
+        <div class="product-card reveal">
+          <div class="product-img" style="background:linear-gradient(135deg,#1a3a0a,#4a7a1a);">🌱</div>
+          <div class="p-body">
+            <div class="p-name serif">Beejamrit</div>
+            <div class="p-name-hi hindi">बीजामृत — बीज उपचार</div>
+            <div class="p-desc">Organic seed treatment solution. Protects seeds from soil-borne diseases, improves germination rate and early root development.</div>
+            <a class="p-wa-btn" href="https://wa.me/916377544290?text=I%20want%20to%20enquire%20about%20Beejamrit." target="_blank">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Enquire on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-us-section">
+  <div class="section-wrap">
+    <div class="section-label">Why Dr. Organic / क्यों चुनें</div>
+    <h2 class="section-h serif">Why 20,000+ Farmers Trust Us</h2>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <span class="why-icon">🔬</span>
+        <div class="why-title serif">ICAR Research Backed</div>
+        <div class="why-desc">Every product is developed from 15+ years of scientific research under ICAR's All India Network Project on Organic Farming. Not just a business — a scientific mission.</div>
+      </div>
+      <div class="why-card reveal">
+        <span class="why-icon">🪱</span>
+        <div class="why-title serif">India's Highest Worm Density</div>
+        <div class="why-desc">We give 2000 earthworms per kg — 4–5x more than any other supplier in India. This means faster decomposition, richer compost and healthier soil for you.</div>
+      </div>
+      <div class="why-card reveal">
+        <span class="why-icon">🚫</span>
+        <div class="why-title serif">Zero Adulteration Guarantee</div>
+        <div class="why-desc">Pure cow dung, no mixing of soil or other fillers. Our vermicompost is dark, fine-textured and rich — tested and verified by ICAR standards.</div>
+      </div>
+      <div class="why-card reveal">
+        <span class="why-icon">🚚</span>
+        <div class="why-title serif">PAN India Delivery</div>
+        <div class="why-desc">We ship vermicompost, vermiwash and earthworms across all of India. Safe packaging ensures live earthworms reach you healthy and active.</div>
+      </div>
+      <div class="why-card reveal">
+        <span class="why-icon">📞</span>
+        <div class="why-title serif">After-Sales Support</div>
+        <div class="why-desc">Buy once, supported forever. Dr. Sharvan ji personally guides buyers on usage, application rates and troubleshooting via WhatsApp.</div>
+      </div>
+      <div class="why-card reveal">
+        <span class="why-icon">🏪</span>
+        <div class="why-title serif">Also on Amazon & Flipkart</div>
+        <div class="why-desc">Products available on major e-commerce platforms for easy online ordering. Or order directly for best price and personal attention.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DELIVERY INFO -->
+<section class="delivery-section">
+  <div class="section-wrap">
+    <div class="section-label">Ordering / ऑर्डर कैसे करें</div>
+    <h2 class="section-h serif">Simple 4-Step Ordering Process</h2>
+    <p class="section-hi hindi">आसान 4 चरणों में अपना ऑर्डर दें</p>
+    <div class="delivery-grid">
+      <div class="dc reveal">
+        <div class="dc-icon">💬</div>
+        <div class="dc-title">Step 1: WhatsApp</div>
+        <div class="dc-desc">Message Dr. Sharvan ji on WhatsApp with product name, quantity and your delivery address.</div>
+      </div>
+      <div class="dc reveal">
+        <div class="dc-icon">✅</div>
+        <div class="dc-title">Step 2: Confirm</div>
+        <div class="dc-desc">Get price confirmation, delivery timeline and bank/UPI details from Dr. Sharvan ji directly.</div>
+      </div>
+      <div class="dc reveal">
+        <div class="dc-icon">💳</div>
+        <div class="dc-title">Step 3: Payment</div>
+        <div class="dc-desc">Pay via UPI, NEFT or Bank Transfer. Receipt shared immediately on WhatsApp.</div>
+      </div>
+      <div class="dc reveal">
+        <div class="dc-icon">📦</div>
+        <div class="dc-title">Step 4: Delivery</div>
+        <div class="dc-desc">Order dispatched within 24–48 hours. Tracking details shared. PAN India delivery.</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2rem;">
+      <a class="btn-green" href="https://wa.me/916377544290?text=Namaste%20Dr.%20Sharvan%20ji%2C%20I%20want%20to%20place%20an%20order." target="_blank">📱 Start Your Order on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:0.8rem;">
+        <div class="logo-icon">🌿</div>
+        <div class="logo-text-wrap">
+          <div class="logo-main">Dr. Organic Vermicompost Farm</div>
+          <div class="logo-sub">Est. 2020 · Jaipur, Rajasthan</div>
+        </div>
+      </div>
+      <p>India's most trusted vermicompost farm. Pure. Scientific. Organic.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="training.html">Training</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+917976996775">📞 7976996775</a></li>
+        <li><a href="tel:+916377544290">📞 6377-544290</a></li>
+        <li><a href="mailto:sharvan5825@gmail.com">✉️ Email Us</a></li>
+        <li><a href="https://wa.me/916377544290" target="_blank">💬 WhatsApp</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Follow</h4>
+      <ul>
+        <li><a href="https://www.youtube.com/@dr.organicfarming1467" target="_blank">▶ YouTube</a></li>
+        <li><a href="https://www.instagram.com/dr_sharvan_yadav/" target="_blank">📸 Instagram</a></li>
+        <li><a href="https://www.facebook.com/p/Dr-Organic-Vermicompst-Farm-100064180596347/" target="_blank">f Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2024 Dr. Organic Vermicompost Farm · Sundarpura, Jaipur, Rajasthan — 303602</div>
+    <div class="footer-tagline serif">Heal the Soil. Feed the Nation. 🌱</div>
+  </div>
+</footer>
+
+<script src="js/images.js"></script>
+<script>
+  window.addEventListener('scroll', function() {
+    const nav = document.getElementById('mainNav');
+    if(window.scrollY > 50) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  });
+  function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if(entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
