@@ -1,9 +1,9 @@
 
 # Python Automation Tools
 
-This repository contains a collection of real-world Python automation scripts built to improve daily productivity, especially in Excel reporting, file organization, and resume processing tasks.
+Small Python scripts from my early automation work: Excel output, file organisation, email drafts and bulk downloads. Each one replaced a task someone was doing by hand.
 
-## 🔧 Tools Included
+## Tools included
 
 ### 1. generate_report.py
 Automatically generates a well-formatted Excel report from raw data with table styles and aligned columns.
@@ -23,7 +23,7 @@ Copies files from a master folder to target folders based on email IDs in an Exc
 ### 6. organize_folders.bat
 Simple batch script that organizes files into folders by extension or type.
 
-## 📌 Author
-Shriram Yadav – BSc BEd Mathematics Student | Python & MS Office Enthusiast
+## Author
+Ram Yadav, automation developer · [techshipz.github.io](https://techshipz.github.io)
 
 ---
