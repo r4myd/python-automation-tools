@@ -24,6 +24,6 @@ Copies files from a master folder to target folders based on email IDs in an Exc
 Simple batch script that organizes files into folders by extension or type.
 
 ## Author
-Ram Yadav, automation developer · [techshipz.github.io](https://techshipz.github.io)
+Ram Yadav, automation developer · [r4myd.com](https://r4myd.com)
 
 ---
